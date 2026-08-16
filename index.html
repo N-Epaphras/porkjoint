@@ -1,0 +1,114 @@
+<?php
+// Handle dynamic menu item loading
+$pork_specials = [
+    ["name" => "Pork Sticks / Skewers (Muchomo)", "price" => "Ugx 6000", "desc" => " Seasoned chunks of meat roasted over charcoal, easily eaten on the go."],
+    ["name" => "One kg Lusaniya (Deep-Fried / Pan-Fried Special)", "price" => "Ugx 20,000", "desc" => "Heavy, succulent cuts fried traditionally in a wide, shallow metal pan (kikalayi), often cooked directly in their own rich fats alongside onions and tomatoes."],
+    ["name" => "A half kg Roasted Ribs & Chunks", "price" => "Ugx 10,000", "desc" => " Wet or dry-rubbed ribs and shoulder cuts charred over open flames."],
+    ["name" => "Specialty Parts (Ears, Feet)", "price" => "Ugx 10,000 per plate", "desc" => "Ears and feet (amatu or ekigyere) and other fatty bits prized for their crunchy, gelatinous texture."]
+];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- Meta Description: Summary text displayed under the headline in search results -->
+  <meta name="description" content="Sizzle & Swill - Your top bar and pork joint offering slow-roasted pork belly, smoked ribs, and local craft drafts.">
+
+  <!-- Directs search engine web crawlers to index the page and follow internal links -->
+  <meta name="robots" content="index, follow">
+  
+  <title>Nsubuga | Bar & Pork Joint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="hero-header">
+    <div class="header-overlay">
+      <h1>NSUBUGA BAR & PORK JOINT</h1>
+      <p>GARNISHED/ROASTED PORK & LOCAL/EXECUTIVE BEERS</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#events">Events</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
+
+  <!-- Main Grid Layout -->
+  <div class="container">
+    
+    <!-- Left Column: About & Specials -->
+    <main class="main-content">
+      <section id="about">
+        <h2>About Our Joint</h2>
+        <p>
+          Welcome to <strong>Nsubuga Bar & Pork Joint</strong>, your perfect destination for delicious roasted pork, refreshing drinks, and great moments. We take pride in serving freshly prepared, well-seasoned pork, expertly roasted to bring out its rich taste, tenderness, and irresistible aroma. At Nsubuga Bar & Pork Joint, we are passionate about great food, quality service, and creating a welcoming place where friends and family can relax and enjoy themselves. Whether you're stopping by for a tasty pork dish, your favorite drink, or a good time with friends, we are here to give you a memorable experience. Come hungry, grab a drink, and enjoy the moment — Nsubuga Bar & Pork Joint is where great taste meets great vibes!        </p>
+      </section>
+
+      <section id="menu">
+        <h2>Signature Pork Cuts</h2>
+        <div class="signature-dishes">
+          <?php foreach ($pork_specials as $dish): ?>
+            <div class="dish-card">
+              <h4><?php echo htmlspecialchars($dish['name']); ?> <span><?php echo $dish['price']; ?></span></h4>
+              <p><?php echo htmlspecialchars($dish['desc']); ?></p>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </section>
+
+      <section id="contacts">
+        <h2>Reserve a Table</h2>
+        <form id="reservation-form">
+          <input type="text" name="fullname" placeholder="Full Name" required>
+          <input type="tel" name="whatsapp" placeholder="WhatsApp Number (e.g. +2567*********)" required>
+          <input type="number" name="guests" placeholder="Number of Guests" min="1" max="20" required>
+          <button type="submit">Book Now</button>
+        </form>
+        <div id="form-response"></div>
+      </section>
+    </main>
+
+    <!-- Right Sidebar: Gallery & Bar Specials -->
+    <aside class="sidebar">
+      <section id="gallery">
+        <h2>Our Gallery</h2>
+        <div class="gallery-grid">
+          <img src="images/flied pork.jpeg" alt="flied pork">
+          <img src="images/pork1.jpeg" alt="Pork joint area1">
+          <img src="images/coke soda.jpeg" alt="Cold Coke Soda">
+          <img src="images/roasted pork.jpeg" alt="roasted pork">
+          <img src="images/pork 5.jpeg" alt="Pork joint area5">
+          <img src="images/pork2.jpeg" alt="Pork joint area2">
+          <img src="images/pork3.jpeg" alt="Pork joint area3">
+          <img src="images/pork4.jpeg" alt="Pork joint area4">
+          <img src="images/image6.jpeg" alt="pork sticks">
+          
+        </div>
+      </section>
+
+      <section id="events" class="drink-specials">
+        <h3> Daily Happy Hour</h3>
+        <p>Join us from 4:00 PM – 7:00 PM every week day for the best discounts of the day with free refreshment on each item ordered!!</p>
+      </section>
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-location"><strong>Location:</strong> Kabale-Katuna Road, approximately 16km off Kabale Town, in Buranga parish, Ahamabare.</p>
+    <p>© <?php echo date("Y"); ?> NSUBUGA BAR & PORK JOINT. ALL RIGHTS RESERVED. | <a href="#privacy">PRIVACY POLICY</a></p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
