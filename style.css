@@ -55,7 +55,7 @@ input {
             rgba(0, 0, 0, 0.58),
             rgba(0, 0, 0, 0.72)
         ),
-        url("images/flied pork.jpeg")
+        url("flied pork.jpeg")
         center center / cover no-repeat;
 
     display: flex;
