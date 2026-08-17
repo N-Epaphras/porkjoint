@@ -7,7 +7,7 @@ var porkSpecials = [
   {
     name: 'One kg Lusaniya (Deep-Fried / Pan-Fried Special)',
     price: 'Ugx 20,000',
-    desc: 'Heavy, succulent cuts fried traditionally in a wide, shallow metal pan (kikalayi), often cooked directly in their own rich fats alongside onions and tomatoes.'
+    desc: 'Heavy, succulent cuts fried traditionally in a wide, shallow metal pan (lusaniya), often cooked directly in their own rich fats alongside onions and tomatoes.'
   },
   {
     name: 'A half kg Roasted Ribs & Chunks',
@@ -22,6 +22,11 @@ var porkSpecials = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
+  var yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
   var menuContainer = document.getElementById('signature-dishes');
   if (menuContainer) {
     menuContainer.innerHTML = porkSpecials.map(function(dish) {
